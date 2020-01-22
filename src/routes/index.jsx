@@ -1,16 +1,20 @@
 import React from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 
-import Home from '../pages/home';
-import About from '../pages/about';
+import Posts from '../pages/Base/posts';
+import UploadData from '../pages/Base/UploadData';
+import Users from '../pages/System/users';
+import Staffs from '../pages/Base/staffs';
+import Reports from '../pages/Reports/index';
 
 const Routes = () => (
-	<Router>
-		<div>
-			<Route exact path="/" component={Home}/>
-			<Route path="/about" component={About}/>
-		</div>
-	</Router>
+	<Switch>
+		<Route exact path="/staffs" component={Staffs}/>
+		<Route path="/upload-data" component={UploadData}/>
+		<Route path="/users" component={Users}/>
+		<Route path="/posts" component={Posts}/>
+		<Route path="/reports" component={Reports}/>
+	</Switch>
 )
 
 export default Routes;

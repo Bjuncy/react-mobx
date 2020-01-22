@@ -1,9 +1,14 @@
-import aboutStore from './about';
-import homeStore from './home';
+import { postManagerStore } from './baseStore';
+import { usersStore } from './system';
+import { MenusStore, ProjectsStore } from './publicStore';
+import { menusState } from './states';
 
 const store = {
-  aboutStore,
-  homeStore
+  postManagerStore,
+  MenusStore,
+  ProjectsStore,
+  usersStore,
+  menusState
 };
 
 export default store;

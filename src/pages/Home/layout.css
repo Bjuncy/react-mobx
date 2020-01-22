@@ -1,0 +1,18 @@
+.logo {
+  width: 128px;
+  height: 105px;
+  background: url('../../assets/imgs/logo-nav@2x.png') no-repeat center center;
+  background-size: 128px 30px;
+  margin: 0 auto;
+}
+.trigger {
+  font-size: 18px;
+  line-height: 64px;
+  padding: 0 16px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.trigger:hover {
+  color: #FFB230;
+}
