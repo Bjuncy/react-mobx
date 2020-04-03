@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { Layout, Menu, Icon} from 'antd';
 import { observer, inject } from 'mobx-react'
 const { Sider } = Layout;
@@ -13,18 +13,25 @@ class SiderBar extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      arr: []
+      menuIds: ''
     }
   }
   pickMenu (item) {
     item = Object.assign({}, item, {current: true})
     this.props.menusState.add(item)
+    this.setState({ menuIds: item.id })
   }
   render () {
     return (
-      <Sider>
-        <div className="logo" />
-        <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
+      <Sider
+        trigger={null}
+        collapsed={this.props.menusState.obj.collapsed}
+        collapsible>
+        <div className="logo"/>
+        <Menu
+          theme="dark"
+          mode="inline"
+          selectedKeys={this.props.menusState.obj.selectedKeys}>
           {
             this.props.MenusStore.menus.map(v => {
               if (v.sub.length) {
@@ -58,4 +65,4 @@ class SiderBar extends Component {
     )
   }
 };
-export default SiderBar;
+export default withRouter(SiderBar);

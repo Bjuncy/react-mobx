@@ -20,6 +20,10 @@ function getMenus () {
       name: '用户管理',
       routerName: 'users'
     },
+    {
+      name: '首页',
+      routerName: 'home'
+    }
   ]
   let articles = []
   for (let i = 0; i < parents.length; i++) {

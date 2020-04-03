@@ -1,11 +1,12 @@
 import React from 'react'
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, Redirect } from 'react-router-dom'
 
 import Posts from '../pages/Base/posts';
 import UploadData from '../pages/Base/UploadData';
 import Users from '../pages/System/users';
 import Staffs from '../pages/Base/staffs';
-import Reports from '../pages/Reports/index';
+import Reports from '../pages/Reports';
+import HomePage from '../pages/Home/homePage';
 
 const Routes = () => (
 	<Switch>
@@ -14,6 +15,8 @@ const Routes = () => (
 		<Route path="/users" component={Users}/>
 		<Route path="/posts" component={Posts}/>
 		<Route path="/reports" component={Reports}/>
+		<Route path="/homepage" component={HomePage}/>
+		<Redirect from="/*" to="/homepage" />
 	</Switch>
 )
 

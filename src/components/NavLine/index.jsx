@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Breadcrumb, Icon } from 'antd';
 import { observer, inject } from 'mobx-react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import './style.css'
 
 @inject('menusState')
@@ -12,6 +12,7 @@ class NavLine extends Component {
   }
   deleted (index) {
     this.props.menusState.deleted(index)
+    this.props.history.push('/' + this.props.menusState.obj.currentRouteName)
   }
   render () {
     return (
@@ -20,7 +21,7 @@ class NavLine extends Component {
           <Icon type="left" style={{ width: '24px', backgroundColor: '#fff'}} />
         </Breadcrumb.Item>
         {
-          this.props.menusState.routerStore.map((item, index) => {
+          this.props.menusState.obj.routerStore.map((item, index) => {
             return (
               <Breadcrumb.Item key={item.id} className={item.current ? 'active' : null}>
                 <Link to={`/${item.routeName}`} onClick={() => this.change(index)}>{item.name}</Link>
@@ -29,9 +30,8 @@ class NavLine extends Component {
             )
           })
         }
-        
       </Breadcrumb>
     )
   }
 }
-export default NavLine
+export default withRouter(NavLine);
