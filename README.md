@@ -1,3 +1,6 @@
+# react-app
+create-react-app + mobx + antd + axios 搭建一套框架
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
