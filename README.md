@@ -1,5 +1,36 @@
 # react-app
 create-react-app + mobx + antd + axios 搭建一套框架
+**本项目仅为前端框架搭建练习，暂无页面详细功能代码**
+
+## 技术栈
+- 前端框架：react.js
+- 页面路由：react-router-dom
+- 状态管理：mobx-react
+- Http客户端：Axios
+- UI框架：Antd
+- 数据模拟：Mock
+
+---
+## 项目结构
+项目基本目录根据create-react-app自动搭建
+
+- `config`: 配置文件，搭建时已修改好，后续一般无需修改
+- `public`: 共用文件，搭建时已修改好，后续一般无需修改
+- `script`: 构建文件，搭建时已修改好，后续一般无需修改
+- `src`: 源码
+  - `assets`：静态资源
+  - `api`：api接口文件
+  - `axios`：Axios 接口请求配置
+  - `components`：组件文件
+  - `mock`：静态资源
+  - `pages`：页面文件
+  - `routes`：前端路由
+  - `store`：数据存值
+  - `utils`：常用方法文件
+- `config-overrides.js`: antd 全局自定义配置
+
+---
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
